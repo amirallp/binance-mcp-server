@@ -1,28 +1,22 @@
 {
   "name": "binance-mcp-server",
   "version": "2.0.0",
-  "description": "Read-only MCP server: Binance public market data (Spot + USD\u24c8-M Perp Futures + Options). No API key. Data integrity first. Optimised for trading analysis.",
+  "description": "Read-only MCP server: Binance public market data (Spot + USD-M Perp Futures + Options). No API key.",
   "type": "module",
   "main": "dist/index.js",
-  "bin": {
-    "binance-mcp-server": "dist/index.js"
-  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
     "start:http": "TRANSPORT=http node dist/index.js",
-    "dev": "tsc --watch"
+    "postinstall": "tsc"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
     "express": "^4.21.2",
-    "zod": "^3.24.1"
-  },
-  "devDependencies": {
-    "@modelcontextprotocol/inspector": "^2.4.0",
-    "@types/express": "^4.17.21",
+    "zod": "^3.24.1",
+    "typescript": "^5.7.2",
     "@types/node": "^22.10.2",
-    "typescript": "^5.7.2"
+    "@types/express": "^4.17.21"
   },
   "engines": {
     "node": ">=18"
